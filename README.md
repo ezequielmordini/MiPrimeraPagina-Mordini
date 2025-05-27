@@ -1,21 +1,15 @@
 # Proyecto Django Club Atlético Independiente
 
 ## Descripción
-Esta es una web básica usando Django con temática del Club Atlético Independiente. Se implementa herencia de plantillas, 3 modelos, formularios para ingresar datos y búsqueda.
+Se creo una web básica para poder hacer el registro de nuevos socios, agregar noticias sobre el club, jugadores y más.
 
 ## Modelos
 - Jugador (nombre, posición, edad)
 - Partido (rival, fecha, resultado)
 - Noticia (título, contenido, fecha de publicación)
+- Nuevo Socio (nombre, apellido, email, dni)
 
 ## Formularios
 - Formulario para agregar cada modelo.
 - Formulario para buscar Jugadores por nombre.
-
-## Cómo correr el proyecto localmente
-
-1. Crear y activar un entorno virtual (opcional pero recomendado):
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-# o venv\Scripts\activate en Windows
+- Formulario para registrar nuevos socios de la institución.
