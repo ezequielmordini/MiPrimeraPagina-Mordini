@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Club Atlético Independiente{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            position: relative;
+            min-height: 100vh;
+        }
+    
+        /* Imagen tenue de fondo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(/static/club/imagenes/download.jpg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;  /* Ajustá este valor para más o menos transparencia */
+            z-index: -1;
+        }
+    
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #d00;
+        }
+    
+        nav a:hover {
+            text-decoration: underline;
+        }
+    
+        header, main {
+            max-width: 800px;
+            margin: auto;
+        }
+    
+        header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+    
+        header img {
+            width: 50px;
+            height: 50px;
+        }
+    
+        /* Este bloque asegura que todo el contenido quede por encima del fondo */
+        header, nav, main, footer, h1, h2, p, form {
+            position: relative;
+            z-index: 1;
+        }
+        .banner img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px; /* opcional, suaviza bordes */
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #900; /* rojo oscuro */
+            margin: 0;
+        }
+
+    </style>
+ 
+    {% load static %}
+</head>
+<body>
+    <body>
+        <!-- Banner arriba de todo -->
+        <div class="banner">
+            <img src="{% static 'club/imagenes/banner_ind.jpg' %}" alt="Banner del club">
+        </div>
+    
+        <header>
+            <img src="{% static 'club/imagenes/download.jpg' %}" alt="Escudo del Club">
+            <h1>Club Atlético Independiente</h1>
+        </header>
+    
+    <header>
+    </header>
+
+    <nav>
+        <a href="{% url 'index' %}">Inicio</a>
+        <a href="{% url 'registrar_socio' %}">Registrarse como Socio</a>
+        <a href="{% url 'agregar_jugador' %}">Agregar Jugador</a>
+        <a href="{% url 'agregar_partido' %}">Agregar Partido</a>
+        <a href="{% url 'agregar_noticia' %}">Agregar Noticia</a>
+        <a href="{% url 'buscar_jugador' %}">Buscar Jugador</a>
+
+
+    </nav>
+    <hr>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
+

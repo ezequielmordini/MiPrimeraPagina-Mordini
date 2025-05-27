@@ -1,0 +1,23 @@
+{% extends 'club/base.html' %}
+
+{% block title %}Buscar Jugador{% endblock %}
+
+{% block content %}
+<h2>Buscar Jugador</h2>
+
+<form method="get">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if jugadores %}
+    <h3>Resultados:</h3>
+    <ul>
+        {% for jugador in jugadores %}
+            <li>{{ jugador.nombre }} - {{ jugador.posicion }} - Nº {{ jugador.numero }}</li>
+        {% endfor %}
+    </ul>
+{% elif jugadores is not None %}
+    <p>No se encontraron jugadores.</p>
+{% endif %}
+{% endblock %}
